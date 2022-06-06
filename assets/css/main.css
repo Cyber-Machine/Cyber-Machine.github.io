@@ -81,7 +81,8 @@ input, select, textarea {
 		color: #efefef;
 	}
 	::-moz-selection{
-
+		background: #3f3c3a;
+		color: #efefef;
 	}
 	body {
 		background: #fff;
