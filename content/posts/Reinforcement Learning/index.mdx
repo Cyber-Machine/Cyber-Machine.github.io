@@ -1,0 +1,42 @@
+---
+title: Various problems and their approaches in RL.
+date: 2022-10-08
+tags:
+  - Machine Learning
+  - Reinforcement Learning
+  - Deep Learning
+---
+Recently, I have been into Learning Reinforcement Learning, it is a field of Machine Learning where a model is learns through (decision making)/
+(maximizing rewards through action)/(interactive)/(game playing)
+
+
+## Multi-Armed Bandits
+Suppose you are an novice chess player, each move you take can result you in either winning or losing the game. Through repeated games you gain experience and then use it to maximize your chances in winning the game. This similiar analogy is applied to k-armed bandits problem where we try to maximize our liklihood of winning our of k options to maximize rewards or values.
+
+In an environment 
+
+<center>q⇤ (a) = E[Rt | At = a]</center>
+
+#### Incremental Implementation
+In order to compute averages in a computationally efficient manner 
+
+#### Upper Confidence Bound (UCB)
+The idea of this upper confidence bound (UCB) action selection is that the square-root term is a measure of the uncertainty or variance in the estimate of a’s value.
+
+/// Equation and its meaning 
+
+
+####Gradient Bandit Algorithms
+we consider learning a numerical preference for each action ,The larger the preference, the more often that action is
+taken, but the preference has no interpretation in terms of reward. Only the relative
+preference of one action over another is important; if we add 1000 to all the action
+preferences there is no effect on the action probabilities, which are determined according
+to a soft-max distribution
+
+
+####Contextual Bandits
+
+
+
+## Finite Markove Decision
+MDPs are a classical formalization of sequential decision making,where actions influence not just immediate rewards, but also subsequent situations,or states, and through those future rewards. Thus MDPs involve delayed reward and the need to trade off immediate and delayed reward
