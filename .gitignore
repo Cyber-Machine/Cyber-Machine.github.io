@@ -67,3 +67,5 @@ public
 .idea
 .vscode
 .DS_Store
+
+!node_modules/@lekoarts/gatsby-theme-minimal-blog/src/gatsby-plugin-theme-ui/index.js
