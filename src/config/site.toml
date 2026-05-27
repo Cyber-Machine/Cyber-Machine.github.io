@@ -4,6 +4,10 @@ description = "Projects, writing, and short-form notes from Maaz Karim."
 pageTitle = "Maaz Karim | Projects, writing, and notes"
 pageDescription = "A personal publication space for machine learning work, software projects, and smaller notes."
 repository = "https://github.com/Cyber-Machine/Cyber-Machine.github.io"
+socialImage = "/images/social-preview.png"
+socialImageAlt = "Preview card for Maaz Karim with the tagline Building video AI systems."
+themeColorLight = "#fdfdf9"
+themeColorDark = "#171b18"
 footerNote = ""
 
 [config.vibe]
@@ -73,7 +77,7 @@ layout = "grid"
 text = [
   "Building video AI systems.",
 ]
-image = "/images/cover.png"
+image = "/images/social-preview.png"
 
 [config.home.intro]
 title = "I'm Maaz Karim"
@@ -82,7 +86,7 @@ body = [
   "I learn, tinker, and ship better models.",
   "Most of my work lives in the gap between model experiments and usable software training and tuning models, shaping data pipelines, evaluating tradeoffs, and getting systems into a state that is reliable enough to run repeatedly.",
 ]
-image = "/images/cover.png"
+image = "/images/social-preview.png"
 
 [config.home.latest]
 source = "github"

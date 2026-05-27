@@ -147,6 +147,13 @@ const siteConfig = defineCollection({
       pageTitle: z.string(),
       pageDescription: z.string(),
       repository: z.string().url(),
+      socialImage: z.string().optional().default('/images/social-preview.png'),
+      socialImageAlt: z
+        .string()
+        .optional()
+        .default('Preview card for Maaz Karim: building video AI systems.'),
+      themeColorLight: z.string().optional().default('#fdfdf9'),
+      themeColorDark: z.string().optional().default('#171b18'),
       footerNote: z.string().optional().default(''),
     }),
     vibe: z
