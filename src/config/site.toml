@@ -4,7 +4,7 @@ description = "Projects, writing, and short-form notes from Maaz Karim."
 pageTitle = "Maaz Karim | Projects, writing, and notes"
 pageDescription = "A personal publication space for machine learning work, software projects, and smaller notes."
 repository = "https://github.com/Cyber-Machine/Cyber-Machine.github.io"
-socialImage = "/images/social-preview.png"
+socialImage = "/images/social-preview.jpg"
 socialImageAlt = "Preview card for Maaz Karim with the tagline Building video AI systems."
 themeColorLight = "#fdfdf9"
 themeColorDark = "#171b18"
@@ -44,11 +44,11 @@ handle = "@Cyber-Machine"
 role = "Machine learning engineer"
 company = "Independent / open to the right role"
 location = "India"
-email = "maazkarim0312@gmail.com"
+email = "maazkarim02@gmail.com"
 website = "https://cyber-machine.github.io/"
 github = "https://github.com/Cyber-Machine/"
 meta = "ML, software, infrastructure"
-avatar = "https://github.com/Cyber-Machine.png"
+avatar = "/images/profile.png"
 
 [[config.topNav.links]]
 label = "Home"
@@ -77,7 +77,7 @@ layout = "grid"
 text = [
   "Building video AI systems.",
 ]
-image = "/images/social-preview.png"
+image = "/images/social-preview.jpg"
 
 [config.home.intro]
 title = "I'm Maaz Karim"
@@ -86,7 +86,7 @@ body = [
   "I learn, tinker, and ship better models.",
   "Most of my work lives in the gap between model experiments and usable software training and tuning models, shaping data pipelines, evaluating tradeoffs, and getting systems into a state that is reliable enough to run repeatedly.",
 ]
-image = "/images/social-preview.png"
+image = "/images/profile.png"
 
 [config.home.latest]
 source = "github"

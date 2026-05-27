@@ -97,6 +97,20 @@ const socialImage = new URL(imageUrl, Astro.site);
     });
   })();
 </script>
+<script is:inline>
+  (() => {
+    const scrollToTop = () => window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+
+    try {
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+      }
+    } catch {}
+
+    document.addEventListener('astro:after-swap', scrollToTop);
+    window.addEventListener('load', scrollToTop, { once: true });
+  })();
+</script>
 <link rel="icon" href={assetPath('favicon.svg')} sizes="any" />
 <link rel="icon" type="image/png" sizes="32x32" href={assetPath('favicon-32x32.png')} />
 <link rel="icon" type="image/png" sizes="16x16" href={assetPath('favicon-16x16.png')} />

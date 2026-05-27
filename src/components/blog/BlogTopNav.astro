@@ -9,7 +9,7 @@ interface Props {
 }
 
 const { showTocIcon = false, tocItems = [] } = Astro.props;
-const { site, topNav, search } = await getSiteConfig();
+const { profile, site, topNav, search } = await getSiteConfig();
 const links = topNav.links;
 const basePath = import.meta.env.BASE_URL.replace(/\/$/, '');
 const currentPathname =
@@ -123,10 +123,10 @@ const shouldShowTocAction = showTocIcon && tocItems.length > 0;
 
   <div class="nav-actions" aria-label="Page actions">
     <a
-      href={site.repository}
+      href={profile.github}
       target="_blank"
       rel="noreferrer"
-      aria-label="Open GitHub repository"
+      aria-label="Open GitHub profile"
       title="GitHub"
     >
       <Github size={17} stroke-width={2} />

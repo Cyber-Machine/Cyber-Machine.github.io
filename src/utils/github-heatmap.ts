@@ -8,6 +8,10 @@ type GitHubContributionDay = {
   level: 0 | 1 | 2 | 3 | 4;
 };
 
+type GitHubTooltipEntry = {
+  count: number;
+};
+
 function parseGitHubUsername(profileUrl: string) {
   try {
     const url = new URL(profileUrl);
@@ -34,6 +38,10 @@ function buildRange(weeks: number) {
     from: getDateKey(start),
     to: getDateKey(today),
   };
+}
+
+function isDateInRange(date: string, from: string, to: string) {
+  return date >= from && date <= to;
 }
 
 function getCurrentStreak(days: GitHubContributionDay[]) {
@@ -95,15 +103,41 @@ export async function createGitHubHeatmap(profileUrl: string, weeks = 24) {
     }
 
     const svg = await response.text();
-    const rectPattern =
+    const legacyRectPattern =
       /<rect\b[^>]*data-date="(?<date>[^"]+)"[^>]*data-count="(?<count>\d+)"[^>]*>/g;
+    const tooltipPattern =
+      /<tool-tip\b[^>]*for="(?<id>[^"]+)"[^>]*>(?<text>[^<]+)<\/tool-tip>/g;
+    const dayCellPattern =
+      /<td\b[^>]*data-date="(?<date>[^"]+)"[^>]*id="(?<id>[^"]+)"[^>]*data-level="(?<level>[0-4])"[^>]*class="[^"]*ContributionCalendar-day[^"]*"[^>]*><\/td>/g;
     const days: GitHubContributionDay[] = [];
+    const tooltipById = new Map<string, GitHubTooltipEntry>();
 
-    for (const match of svg.matchAll(rectPattern)) {
+    for (const match of svg.matchAll(tooltipPattern)) {
+      const id = match.groups?.id;
+      const text = match.groups?.text?.trim();
+
+      if (!id || !text) {
+        continue;
+      }
+
+      const countMatch = text.match(
+        /(?:(?<count>\d+)|No)\s+contributions?\s+on\s+(?<label>.+?)\./i,
+      );
+
+      if (!countMatch?.groups?.label) {
+        continue;
+      }
+
+      tooltipById.set(id, {
+        count: countMatch.groups.count ? Number(countMatch.groups.count) : 0,
+      });
+    }
+
+    for (const match of svg.matchAll(legacyRectPattern)) {
       const date = match.groups?.date;
       const rawCount = match.groups?.count;
 
-      if (!date || rawCount === undefined) {
+      if (!date || rawCount === undefined || !isDateInRange(date, from, to)) {
         continue;
       }
 
@@ -114,6 +148,32 @@ export async function createGitHubHeatmap(profileUrl: string, weeks = 24) {
         count,
         level: getLevel(count),
       });
+    }
+
+    if (days.length === 0) {
+      for (const match of svg.matchAll(dayCellPattern)) {
+        const date = match.groups?.date;
+        const id = match.groups?.id;
+        const rawLevel = match.groups?.level;
+
+        if (
+          !date ||
+          !id ||
+          rawLevel === undefined ||
+          !isDateInRange(date, from, to)
+        ) {
+          continue;
+        }
+
+        const tooltip = tooltipById.get(id);
+        const count = tooltip?.count ?? 0;
+
+        days.push({
+          date,
+          count,
+          level: Number(rawLevel) as 0 | 1 | 2 | 3 | 4,
+        });
+      }
     }
 
     if (days.length === 0) {

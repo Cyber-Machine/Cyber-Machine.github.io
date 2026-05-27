@@ -208,7 +208,8 @@ const vibes = await Promise.all(
       .vibe-meta {
         display: flex;
         flex-wrap: wrap;
-        gap: 0;
+        column-gap: 6px;
+        row-gap: 0;
         align-items: center;
         margin-bottom: 12px;
         color: var(--paper-ink-faint);
@@ -231,7 +232,7 @@ const vibes = await Promise.all(
 
       .vibe-meta > * + *::before,
       .vibe-tags::before {
-        margin: 0 8px;
+        margin: 0 10px 0 4px;
         color: var(--paper-line-strong);
         content: '/';
       }

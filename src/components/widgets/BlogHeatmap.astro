@@ -39,7 +39,7 @@ const heatmap =
   createRecentBlogHeatmap(posts, weeks, latestCount, startDate);
 const isGitHubSource = source === "github" && githubData !== null;
 const heatmapLabel = isGitHubSource
-  ? `Recent ${heatmap.weeks} weeks GitHub contribution activity`
+  ? `GitHub activity`
   : startDate
     ? `Writing activity since ${heatmap.startDate}`
     : `Recent ${heatmap.weeks} weeks writing activity`;

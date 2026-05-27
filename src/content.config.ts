@@ -147,7 +147,7 @@ const siteConfig = defineCollection({
       pageTitle: z.string(),
       pageDescription: z.string(),
       repository: z.string().url(),
-      socialImage: z.string().optional().default('/images/social-preview.png'),
+      socialImage: z.string().optional().default('/images/social-preview.jpg'),
       socialImageAlt: z
         .string()
         .optional()
