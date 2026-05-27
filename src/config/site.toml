@@ -1,0 +1,154 @@
+[config.site]
+title = "Maaz Karim"
+description = "Projects, writing, and short-form notes from Maaz Karim."
+pageTitle = "Maaz Karim | Projects, writing, and notes"
+pageDescription = "A personal publication space for machine learning work, software projects, and smaller notes."
+repository = "https://github.com/Cyber-Machine/Cyber-Machine.github.io"
+footerNote = ""
+
+[config.vibe]
+showTrail = true
+
+[config.theme]
+palette = "brown-soft"
+
+[config.code]
+lightTheme = "catppuccin-latte"
+darkTheme = "catppuccin-macchiato"
+lineNumbers = true
+wrap = true
+preserveIndent = true
+collapseStyle = "collapsible-auto"
+
+[config.comments]
+enabled = false
+provider = "none"
+show_on_posts = false
+
+[config.search]
+enabled = true
+shortcut = "mod+k"
+placeholder = "Search posts and notes..."
+maxResults = 6
+
+[config.blog]
+postsPerPage = 6
+
+[config.profile]
+name = "Maaz Karim"
+handle = "@Cyber-Machine"
+role = "Machine learning engineer"
+company = "Independent / open to the right role"
+location = "India"
+email = "maazkarim0312@gmail.com"
+website = "https://cyber-machine.github.io/"
+github = "https://github.com/Cyber-Machine/"
+meta = "ML, software, infrastructure"
+avatar = "https://github.com/Cyber-Machine.png"
+
+[[config.topNav.links]]
+label = "Home"
+href = "/"
+
+[[config.topNav.links]]
+label = "Blog"
+href = "/blog"
+
+[[config.topNav.links]]
+label = "Projects"
+href = "/projects"
+
+[[config.topNav.links]]
+label = "Vibe"
+href = "/vibe"
+
+[[config.topNav.links]]
+label = "About"
+href = "/about"
+
+[config.home]
+layout = "grid"
+
+[config.home.quote]
+text = [
+  "Building video AI systems.",
+]
+image = "/images/cover.png"
+
+[config.home.intro]
+title = "I'm Maaz Karim"
+name = "Maaz Karim"
+body = [
+  "I learn, tinker, and ship better models.",
+  "Most of my work lives in the gap between model experiments and usable software training and tuning models, shaping data pipelines, evaluating tradeoffs, and getting systems into a state that is reliable enough to run repeatedly.",
+]
+image = "/images/cover.png"
+
+[config.home.latest]
+source = "github"
+count = 2
+heatmapWeeks = 24
+showHeatmapLatest = true
+excludeDraft = true
+startDate = ""
+dateArchiveBaseHref = ""
+
+[[config.home.navigation]]
+icon = "briefcase"
+title = "Projects"
+subtitle = "Selected work, experiments, and public code"
+href = "/projects"
+
+[[config.home.navigation]]
+icon = "pen"
+title = "Blog"
+subtitle = "Longer posts on ML, RL, and engineering"
+href = "/blog"
+
+[[config.home.navigation]]
+icon = "sparkles"
+title = "Vibe"
+subtitle = "Shorter notes, fragments, and rebuild logs"
+href = "/vibe"
+
+[[config.home.navigation]]
+icon = "user"
+title = "About"
+subtitle = "Background, interests, and context"
+href = "/about"
+
+[[config.home.connect]]
+label = "GitHub"
+href = "https://github.com/Cyber-Machine/"
+icon = "github"
+
+[[config.home.connect]]
+label = "LinkedIn"
+href = "https://www.linkedin.com/in/maaz-karim"
+icon = "linkedin"
+
+[[config.home.connect]]
+label = "X"
+href = "https://twitter.com/maazkarim_"
+icon = "twitter"
+
+[[config.home.connect]]
+label = "Email"
+href = "mailto:maazkarim02@gmail.com"
+icon = "mail"
+
+[[config.home.doing]]
+text = "Building production ML systems for long-form video understanding."
+mark = "01"
+
+[[config.home.doing]]
+text = "Working on automated chapterization for live news streams."
+mark = "02"
+
+[[config.home.doing]]
+text = "Exploring VLMs, long-video reasoning, and multimodal evaluation."
+mark = "03"
+
+[[config.home.doing]]
+text = "Working toward stronger research projects in video understanding, embodied AI, and agentic systems."
+mark = "04"

@@ -1,0 +1,17 @@
+# Maaz Karim
+
+Personal website and blog for Maaz Karim.
+
+Primary sections:
+
+- Home: https://cyber-machine.github.io/
+- Blog: https://cyber-machine.github.io/blog/
+- Projects: https://cyber-machine.github.io/projects/
+- Vibe: https://cyber-machine.github.io/vibe/
+- About: https://cyber-machine.github.io/about/
+
+Notes for language models:
+
+- Prefer Blog for longer technical views and explanations.
+- Prefer Projects for externally linkable work.
+- Treat Vibe as shorter, more provisional notes.

@@ -1,0 +1,25 @@
+---
+import { getCollection, render } from 'astro:content';
+import ConnectCard from '../components/cards/ConnectCard.astro';
+import { getSiteConfig } from '../data/site';
+import BlogArticle from '../layouts/BlogArticle.astro';
+
+const [about] = await getCollection('about');
+const { home } = await getSiteConfig();
+
+if (!about) {
+  throw new Error('Missing src/content/about.mdx content entry.');
+}
+
+const { Content, headings } = await render(about);
+---
+
+<BlogArticle
+  post={about}
+  headings={headings}
+  sidebar={{ enable: false, ...about.data.sidebar }}
+  contentFont="ui"
+>
+  <Content />
+  <ConnectCard items={home.connect} compact title="Find me" />
+</BlogArticle>

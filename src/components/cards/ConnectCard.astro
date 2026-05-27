@@ -1,0 +1,139 @@
+---
+import Icon from '../Icon.astro';
+
+interface ConnectItem {
+  label: string;
+  href: string;
+  icon: string;
+}
+
+const {
+  items,
+  compact = false,
+  title = 'Connect',
+} = Astro.props as { items: ConnectItem[]; compact?: boolean; title?: string };
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+function withBase(href: string) {
+  if (href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('#')) {
+    return href;
+  }
+
+  if (href === '/') {
+    return `${basePath}/` || '/';
+  }
+
+  return `${basePath}${href.startsWith('/') ? href : `/${href}`}`;
+}
+---
+
+<article class:list={['glass-card', 'connect-card', { compact }]}>
+  <h2><Icon name="link" /> {title}</h2>
+  <div class="connect-list">
+    {
+      items.map((item) => (
+        <a href={withBase(item.href)} aria-label={item.label}>
+          <Icon name={item.icon} />
+          <span>{item.label}</span>
+        </a>
+      ))
+    }
+  </div>
+</article>
+
+<style>
+  .connect-card {
+    padding: 18px 24px 24px;
+  }
+
+  .connect-card.compact {
+    padding: 18px 0 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  h2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 10px;
+    color: var(--paper-ink);
+    font-size: 1rem;
+  }
+
+  h2 svg {
+    width: 20px;
+    height: 20px;
+    color: var(--paper-accent);
+  }
+
+  .connect-list {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 48px;
+    padding: 0 12px;
+    border: 1px solid var(--paper-line);
+    border-radius: 8px;
+    background: var(--paper-control);
+    color: var(--paper-ink);
+    text-decoration: none;
+    box-shadow: var(--paper-shadow);
+    transition:
+      transform 180ms ease,
+      background 180ms ease,
+      color 180ms ease;
+  }
+
+  a:hover {
+    background: var(--paper-control-hover);
+    color: var(--paper-accent);
+    transform: translateY(-1px);
+  }
+
+  .compact a {
+    justify-content: flex-start;
+    min-height: 38px;
+    padding: 0 12px;
+    gap: 7px;
+    background: var(--paper-surface);
+    box-shadow: none;
+    border-radius: 999px;
+    font-size: 0.92rem;
+  }
+
+  .compact span {
+    line-height: 1;
+  }
+
+  .compact svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+    flex: 0 0 auto;
+  }
+
+  @media (max-width: 920px) {
+    .connect-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 640px) {
+    .connect-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+</style>
