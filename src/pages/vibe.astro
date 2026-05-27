@@ -134,7 +134,7 @@ const vibes = await Promise.all(
       .vibe-item {
         position: relative;
         z-index: 1;
-        width: min(100%, 620px);
+        width: min(100%, 680px);
         animation: vibe-arrive 520ms both;
         animation-delay: calc(var(--vibe-index) * 72ms);
       }
@@ -182,27 +182,15 @@ const vibes = await Promise.all(
       }
 
       .vibe-item.sm {
-        max-width: 330px;
+        max-width: 380px;
       }
 
       .vibe-item.md {
-        max-width: 530px;
+        max-width: 590px;
       }
 
       .vibe-item.lg {
-        max-width: 690px;
-      }
-
-      .vibe-item:nth-child(3n + 1) {
-        transform: translateX(2vw);
-      }
-
-      .vibe-item:nth-child(3n + 2) {
-        transform: translateX(-3vw);
-      }
-
-      .vibe-item:nth-child(3n) {
-        transform: translateX(0);
+        max-width: 720px;
       }
 
       .vibe-meta {
@@ -290,6 +278,10 @@ const vibes = await Promise.all(
         margin: 16px 0 18px;
       }
 
+      .vibe-images.logo {
+        gap: 0;
+      }
+
       .vibe-image {
         flex: 1 1 210px;
         max-width: min(100%, 420px);
@@ -304,12 +296,36 @@ const vibes = await Promise.all(
         rotate: 0.7deg;
       }
 
+      .vibe-image.logo {
+        flex: 0 0 auto;
+        width: min(100%, 220px);
+        max-width: 220px;
+        padding: 12px 14px;
+        border: 1px solid color-mix(in srgb, var(--paper-line) 78%, transparent);
+        background: color-mix(in srgb, var(--paper-bg) 88%, white 12%);
+        rotate: 0deg;
+      }
+
+      .vibe-image.logo.dark {
+        border-color: color-mix(in srgb, var(--paper-ink) 18%, transparent);
+        background: #0f1218;
+      }
+
       .vibe-image img {
         display: block;
         width: 100%;
         height: auto;
         border-radius: 10px;
         filter: saturate(0.86) contrast(0.98);
+      }
+
+      .vibe-image.logo img {
+        width: 100%;
+        max-height: 72px;
+        object-fit: contain;
+        object-position: left center;
+        border-radius: 0;
+        filter: none;
       }
 
       .vibe-item.quote .vibe-body {
@@ -463,9 +479,18 @@ const vibes = await Promise.all(
                 {entry.data.title && <h2 class="vibe-heading">{entry.data.title}</h2>}
 
                 {entry.data.images.length > 0 && (
-                  <div class="vibe-images" aria-label={`${entry.data.title ?? entry.id} images`}>
+                  <div
+                    class:list={['vibe-images', entry.data.imageMode === 'logo' && 'logo']}
+                    aria-label={`${entry.data.title ?? entry.id} images`}
+                  >
                     {entry.data.images.map((image) => (
-                      <figure class="vibe-image">
+                      <figure
+                        class:list={[
+                          'vibe-image',
+                          entry.data.imageMode === 'logo' && 'logo',
+                          entry.data.imageBackground === 'dark' && 'dark',
+                        ]}
+                      >
                         <SmartImage
                           src={image}
                           alt=""

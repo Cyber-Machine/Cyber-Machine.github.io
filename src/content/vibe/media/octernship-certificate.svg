@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 840" role="img" aria-labelledby="title desc">
+  <title id="title">Octernship note illustration</title>
+  <desc id="desc">A stylized certificate illustration with a GitHub badge, inspired by the provided Octernship artwork.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#caa5bf" />
+      <stop offset="100%" stop-color="#8ca6d6" />
+    </linearGradient>
+    <linearGradient id="sea" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#4b6db7" />
+      <stop offset="100%" stop-color="#2c4a8a" />
+    </linearGradient>
+    <linearGradient id="tentacle" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#6f30f1" />
+      <stop offset="100%" stop-color="#4a19b4" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="840" fill="url(#sky)" />
+  <rect y="586" width="1600" height="254" fill="url(#sea)" />
+
+  <g opacity=".18" fill="#e9def0">
+    <ellipse cx="1230" cy="110" rx="92" ry="24" />
+    <ellipse cx="1310" cy="110" rx="86" ry="24" />
+    <ellipse cx="1270" cy="88" rx="44" ry="30" />
+    <ellipse cx="165" cy="560" rx="220" ry="60" />
+    <ellipse cx="1310" cy="338" rx="140" ry="72" />
+    <ellipse cx="1465" cy="374" rx="120" ry="66" />
+  </g>
+
+  <g fill="#1f2229">
+    <rect width="470" height="175" rx="0" />
+    <rect y="176" width="240" height="172" rx="0" />
+    <rect x="470" width="330" height="84" rx="0" />
+  </g>
+
+  <g stroke="#9fa3ac" stroke-width="2" opacity=".7">
+    <line x1="0" y1="175" x2="470" y2="175" />
+    <line x1="0" y1="348" x2="240" y2="176" />
+    <line x1="470" y1="42" x2="800" y2="42" />
+    <line x1="510" y1="0" x2="510" y2="84" />
+    <line x1="550" y1="0" x2="550" y2="84" />
+    <line x1="590" y1="0" x2="590" y2="84" />
+    <line x1="630" y1="0" x2="630" y2="84" />
+    <line x1="670" y1="0" x2="670" y2="84" />
+  </g>
+
+  <g fill="#fff" font-family="IBM Plex Sans, Arial, sans-serif">
+    <circle cx="86" cy="87" r="34" fill="#ffffff" />
+    <path d="M86 63c-13 0-24 11-24 24 0 10 6 19 15 22l2 1c1 0 1 1 1 1v8c0 1 1 2 2 1l9-3h4c13 0 24-11 24-24S99 63 86 63Zm-7 41c-1 0-2-1-2-2 0-1 1-2 2-2s2 1 2 2c0 1-1 2-2 2Zm14 0c-7 2-12-1-15-5-3-4-3-10-1-16 0-1 2-1 2 0 0 5 1 9 3 12 3 3 6 5 11 4 1 0 2 1 2 2s-1 2-2 3Zm9-18c-1 0-2-1-2-2 0-5-4-9-9-9-1 0-2-1-2-2s1-2 2-2c7 0 13 6 13 13 0 1-1 2-2 2Z" fill="#1f2229" />
+    <text x="142" y="99" font-size="60" font-weight="500">Education</text>
+  </g>
+
+  <g transform="translate(820 338)">
+    <g transform="rotate(-41)">
+      <rect x="-88" y="-172" width="176" height="410" rx="18" fill="#eef1f6" />
+      <rect x="-64" y="-172" width="18" height="410" fill="#dde2ea" />
+      <rect x="46" y="-172" width="18" height="410" fill="#dde2ea" />
+      <path d="M-88 238c46-28 130-28 176 0" fill="none" stroke="#c7ced8" stroke-width="4" />
+    </g>
+
+    <path d="M20-122c44 10 72 52 72 118v198c0 54-18 94-54 122-20 16-52 26-74 22 10-68 4-138-10-204-18-90-6-168 66-256Z" fill="url(#tentacle)" />
+    <path d="M-18 518c58-16 92-64 90-132-2-62-24-118-34-178-14-84-2-150 34-208-58 58-78 114-82 206-2 46 12 102 20 170 10 82 2 118-28 142Z" fill="#6d40dd" opacity=".65" />
+    <ellipse cx="-12" cy="288" rx="10" ry="22" fill="#8e63f8" opacity=".72" />
+    <ellipse cx="-2" cy="198" rx="9" ry="18" fill="#8e63f8" opacity=".62" />
+    <ellipse cx="4" cy="106" rx="8" ry="16" fill="#8e63f8" opacity=".52" />
+
+    <circle cx="-10" cy="-4" r="70" fill="#f9ad2f" />
+    <circle cx="-10" cy="-4" r="52" fill="#915400" />
+    <g transform="translate(-10 -4) scale(1.1)">
+      <path d="M0-29c-17 0-31 14-31 31 0 13 8 25 19 29l3 1c1 1 1 1 1 2l-1 10c0 1 1 2 2 2l11-4 5 1c17 0 31-14 31-31S17-29 0-29Zm-8 54c-1 0-2-1-2-2 0-2 1-3 2-3 2 0 3 1 3 3 0 1-1 2-3 2Zm18-1c-10 3-17-1-21-7-4-5-4-13-2-20 1-1 3-1 3 1 0 6 1 12 5 15 4 5 9 7 15 6 2 0 3 1 3 3 0 1-1 2-3 2Zm13-23c-2 0-3-1-3-3 0-6-5-12-12-12-1 0-2-1-2-3 0-1 1-2 2-2 9 0 17 8 17 17 0 2-1 3-2 3Z" fill="#f9ad2f" />
+    </g>
+  </g>
+
+  <circle cx="805" cy="575" r="42" fill="#f5a9c2" />
+  <path d="M784 605c28-10 53-10 74 0" fill="none" stroke="#9e8bbf" stroke-width="6" stroke-linecap="round" opacity=".35" />
+
+  <g opacity=".18" fill="#8c83c9">
+    <path d="M508 756c62-20 138-20 198 0-69 12-128 12-198 0Z" />
+    <path d="M440 810c98-22 196-22 294 0-94 16-194 16-294 0Z" />
+    <path d="M584 648c48-12 106-12 154 0-49 10-104 10-154 0Z" />
+    <path d="M906 746c78-18 170-18 246 0-84 14-164 14-246 0Z" />
+  </g>
+</svg>

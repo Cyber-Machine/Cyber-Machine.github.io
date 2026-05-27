@@ -347,6 +347,8 @@ const vibe = defineCollection({
       mood: z.string().optional(),
       location: z.string().optional(),
       images: z.array(contentImageSchema({ image })).optional().default([]),
+      imageMode: z.enum(["default", "logo"]).optional().default("default"),
+      imageBackground: z.enum(["default", "dark"]).optional().default("default"),
       tags: z.array(z.string()).optional().default([]),
       align: z.enum(["left", "right", "center"]).optional(),
       size: z.enum(["sm", "md", "lg"]).optional().default("md"),
